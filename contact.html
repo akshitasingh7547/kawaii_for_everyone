@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        :root {
+            --bg-pink: #ffe6f2;
+            --card-white: #ffffff;
+            --text-dark: #4f2f57;
+            --border-pink: rgba(255, 179, 209, 0.7);
+            --shadow: 0 24px 58px rgba(255, 145, 198, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background: linear-gradient(180deg, #fff0f8 0%, #ffd9ec 100%);
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='16' y='24' font-size='24' text-anchor='middle'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E") 16 0, auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .page-card {
+            width: min(760px, 100%);
+            padding: 36px 32px;
+            border-radius: 36px;
+            background: var(--card-white);
+            border: 1px solid var(--border-pink);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .page-card h1 {
+            margin: 0 0 14px;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            letter-spacing: 0.08em;
+        }
+
+        .page-card h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+            color: #7f4c84;
+        }
+
+        .page-card p {
+            margin: 0 0 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #6b4a75;
+        }
+
+        .divider {
+            margin: 24px auto;
+            width: 80%;
+            height: 1px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(255, 147, 195, 0), rgba(255, 147, 195, 0.9), rgba(255, 147, 195, 0));
+        }
+
+        .footer {
+            margin-top: 18px;
+            color: #8b5e88;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .footer a {
+            color: #c2367c;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 520px) {
+            .page-card {
+                padding: 28px 20px;
+            }
+
+            .divider {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <h1>📞 CONTACT SECTION</h1>
+        <h2>Let's Connect 💕</h2>
+        <p>Have questions or want to learn more about our creations?</p>
+
+        <div class="divider"></div>
+
+        <div class="footer">
+            <p><strong>Email</strong></p>
+            <p><a href="mailto:hello@kawaiibunniesco.com">hello@kawaiibunniesco.com</a></p>
+            <p><strong>Instagram</strong></p>
+            <p>@kawaiibunniesco</p>
+        </div>
+    </div>
+</body>
+</html>

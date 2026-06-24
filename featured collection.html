@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Collection</title>
+    <style>
+        :root {
+            --bg-pink: #ffe6f2;
+            --card-white: #ffffff;
+            --shadow: 0 24px 60px rgba(255, 149, 198, 0.2);
+            --text-dark: #4f2f57;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background: linear-gradient(180deg, #ffe8f6 0%, #ffd4e8 100%);
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='16' y='24' font-size='24' text-anchor='middle'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E") 16 0, auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .page-card {
+            width: min(900px, 100%);
+            padding: 32px;
+            border-radius: 36px;
+            background: var(--card-white);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 182, 209, 0.55);
+        }
+
+        .page-card h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+        }
+
+        .collection-grid {
+            display: grid;
+            gap: 22px;
+            margin-top: 24px;
+        }
+
+        .item-card {
+            padding: 24px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, #fff6fc 0%, #fff0f9 100%);
+            border: 1px solid rgba(255, 200, 221, 0.7);
+            box-shadow: 0 14px 32px rgba(255, 192, 214, 0.18);
+            text-align: left;
+        }
+
+        .item-card h2 {
+            margin: 0 0 12px;
+            font-size: 1.5rem;
+        }
+
+        .item-card p {
+            margin: 0 0 16px;
+            line-height: 1.7;
+            color: #6d4a72;
+        }
+
+        .item-card img {
+            width: 100%;
+            border-radius: 22px;
+            object-fit: cover;
+            max-height: 280px;
+            display: block;
+        }
+
+        @media (max-width: 720px) {
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 721px) {
+            .collection-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .page-card {
+                padding: 24px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <h1>Featured Collection</h1>
+        <div class="collection-grid">
+            <div class="item-card">
+                <h2>🦋 Butterfly Collection</h2>
+                <p>Delicate and colorful accessories inspired by nature and beauty.</p>
+                <img src="3.jpeg" alt="Butterfly Collection">
+            </div>
+            <div class="item-card">
+                <h2>💙 Ocean Collection</h2>
+                <p>Elegant blue bead creations that capture the beauty and mystery of the sea.</p>
+                <img src="1.jpeg" alt="Ocean Collection">
+            </div>
+            <div class="item-card">
+                <h2>🌙 Celestial Collection</h2>
+                <p>Dreamy moon and star inspired pieces designed to add a little magic to your style.</p>
+                <img src="1.jpeg" alt="Celestial Collection">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

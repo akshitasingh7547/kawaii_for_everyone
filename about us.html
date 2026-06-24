@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        :root {
+            --bg-pink: #ffe7f2;
+            --card-pink: rgba(255, 240, 250, 0.95);
+            --text-color: #4f2e51;
+            --border-pink: rgba(255, 178, 210, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background: linear-gradient(180deg, #fff0f8 0%, #ffd6eb 100%);
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='16' y='24' font-size='24' text-anchor='middle'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E") 16 0, auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+        }
+
+        .page-container {
+            width: min(760px, 100%);
+        }
+
+        h1 {
+            margin: 0 0 18px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            letter-spacing: 0.08em;
+        }
+
+        .card {
+            background: var(--card-pink);
+            border: 1px solid var(--border-pink);
+            border-radius: 34px;
+            padding: 34px 32px;
+            box-shadow: 0 26px 50px rgba(255, 156, 201, 0.18);
+            backdrop-filter: blur(8px);
+        }
+
+        .card p {
+            margin: 0 0 28px;
+            line-height: 1.75;
+            font-size: 1.05rem;
+            white-space: pre-line;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        .proceed-button {
+            border: none;
+            border-radius: 999px;
+            padding: 16px 30px;
+            background: linear-gradient(135deg, #ff9ccd, #ff6aa3);
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 18px 36px rgba(255, 104, 167, 0.22);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+            text-decoration: none;
+        }
+
+        .proceed-button:hover,
+        .proceed-button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 44px rgba(255, 104, 167, 0.30);
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 24px 16px;
+            }
+
+            .card {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>Our Story</h1>
+        <div class="card">
+            <p>KawaiiBunniesCo was created by Tiff with a passion for creativity and a love for all things cute and magical.
+
+Inspired by kawaii culture, fantasy aesthetics, and colorful designs, every piece is thoughtfully handmade with care and attention to detail. From celestial necklaces and butterfly accessories to unique resin creations, our goal is simple:
+
+To create beautiful pieces that bring happiness to everyone.
+
+As a small business, we are incredibly grateful for every person who supports our journey and becomes part of the KawaiiBunnies family. 💖</p>
+            <div class="button-group">
+                <a class="proceed-button" href="feedback.html">Proceed</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

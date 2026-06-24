@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        :root {
+            --bg-pink: #ffe9f4;
+            --card-white: #ffffff;
+            --border-pink: rgba(255, 181, 212, 0.7);
+            --text-dark: #4f2f57;
+            --shadow: 0 24px 62px rgba(255, 141, 198, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background: linear-gradient(180deg, #fff0f8 0%, #ffd8ec 100%);
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='16' y='24' font-size='24' text-anchor='middle'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E") 16 0, auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .page-card {
+            width: min(720px, 100%);
+            padding: 36px 32px;
+            border-radius: 34px;
+            background: var(--card-white);
+            border: 1px solid var(--border-pink);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .page-card h1 {
+            margin: 0 0 16px;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            letter-spacing: 0.08em;
+        }
+
+        .page-card p {
+            margin: 0 0 24px;
+            line-height: 1.75;
+            color: #6c4d72;
+        }
+
+        .feedback-form {
+            display: grid;
+            gap: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        .slider-group {
+            width: 100%;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 183, 213, 0.75);
+            background: #fff8fd;
+            color: var(--text-dark);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: 0 0 0 4px rgba(255, 192, 218, 0.25);
+        }
+
+        .slider-track {
+            margin-top: 12px;
+            display: grid;
+            gap: 10px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            appearance: none;
+            height: 12px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ff87c2 0%, #ffafe2 100%);
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid #ff85c3;
+            box-shadow: 0 4px 18px rgba(255, 133, 195, 0.35);
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid #ff85c3;
+            cursor: pointer;
+        }
+
+        .rating-value {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 42px;
+            border-radius: 14px;
+            background: #fff0f9;
+            border: 1px solid rgba(255, 182, 210, 0.75);
+            font-weight: 700;
+            color: #b73c81;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px 0;
+            border: none;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff93c8, #ff6aa3);
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 18px 36px rgba(255, 112, 178, 0.24);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 44px rgba(255, 112, 178, 0.34);
+        }
+
+        .subscribe-card {
+            margin-top: 32px;
+            padding: 26px 28px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, #fff4fb 0%, #ffe9f4 100%);
+            border: 1px solid rgba(255, 181, 212, 0.7);
+            box-shadow: 0 18px 40px rgba(255, 150, 199, 0.18);
+        }
+
+        .subscribe-card h2 {
+            margin: 0 0 12px;
+            font-size: 1.55rem;
+        }
+
+        .subscribe-card p {
+            margin: 0 0 22px;
+            line-height: 1.7;
+            color: #7a5380;
+        }
+
+        @media (max-width: 520px) {
+            .page-card {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <h1>Feedback</h1>
+        <p>Your voice matters! Share your name and rate your experience with our kawaii creations.</p>
+        <form class="feedback-form">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your sweet name...">
+            </div>
+
+            <div class="slider-group">
+                <label for="rating">Rating</label>
+                <div class="slider-track">
+                    <input type="range" id="rating" name="rating" min="1" max="5" value="4" oninput="ratingValue.textContent = this.value">
+                    <div class="rating-value" id="ratingValue">4</div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Send Feedback</button>
+        </form>
+
+        <div class="subscribe-card">
+            <h2>Join the Bunny Family 💖</h2>
+            <p>Be the first to hear about new collections, giveaways, special offers, and exciting surprises.</p>
+            <button class="submit-button">Subscribe</button>
+        </div>
+    </div>
+</body>
+</html>
